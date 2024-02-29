@@ -1,0 +1,33 @@
+@font-face {
+    font-family: Quicksand;
+    src: url("../fonts/Quicksand-Medium.ttf");
+}
+.QuicksandFont{
+    font-family: Quicksand;
+}
+
+@font-face {
+    font-family: Outage;
+    src: url("../fonts/Outage.ttf");
+}
+.OutageFont{
+    font-family: Outage;
+}
+
+@font-face {
+    font-family: Code-Bold;
+    src: url("../fonts/CODE\ Light.otf");
+}
+.CodeBold{
+    font-family: Code-Bold;
+}
+
+
+body{
+    background-color: #231f23;
+}
+
+h1{
+    font-family: Outage;
+    color: white;
+}
