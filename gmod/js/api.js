@@ -1,7 +1,8 @@
 const apiBase = "https://gmod-api.tracer755.com";
 let quickParam = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
 
-document.body.innerHTML += `<center><hr style="width:60%; margin-bottom:6px;"><h6 style="padding-bottom:10px;">Made with &hearts; by Wicker</h6></center>`;
+document.body.innerHTML += `<center><hr style="width:60%; margin-bottom:6px;"><div style="display: flex; flex-direction: row; justify-content: center;"><h6 style="padding-bottom:10px; padding-right:20px;">Made with &hearts; by Wicker</h6> <a href="https://status.tracer755.com/"><h6>Check Status</h6></a></div></center>`;
+
 
 function PollAPI(){
   axios.get(apiBase)
@@ -19,6 +20,8 @@ function PollAPI(){
       <div class="alert alert-dismissible alert-danger" style="max-width: 40%;">
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         <strong>Oh snap!</strong> The server appears to be unreachable
+        <br>
+        <a href="https://status.tracer755.com/">Check Status Here!</a>
       </div>
       `;
     });
