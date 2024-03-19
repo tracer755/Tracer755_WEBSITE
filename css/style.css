@@ -1,3 +1,4 @@
+/*fonts*/
 @font-face {
     font-family: Quicksand;
     src: url("../fonts/Quicksand-Medium.ttf");
@@ -22,12 +23,90 @@
     font-family: Code-Bold;
 }
 
-
+/*global bs*/
 body{
-    background-color: #231f23;
+    background-color: #130c24;
+    margin: 0;
 }
-
-h1{
+a {
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+}
+h1,h2,h3,h4,h5,h6{
     font-family: Outage;
     color: white;
+    padding: 0;
+    margin: 0;
+}
+br {
+    user-select: none;
+}
+
+/*magic*/
+div.topbar{
+    justify-content: center;
+    display: inline-flex;
+    flex-direction: row;
+
+    background: rgba(124, 124, 124, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(124, 124, 124, 0.28);
+    border-top: 0;
+    padding: .5vw;
+}
+div.topbar h3 {
+    color: white;
+    padding-left: 1.2vw;
+    padding-right: 1.2vw;
+    transition: .3s;
+}
+div.topbar h3:hover {
+    color: #c7c7c7;
+    transition: .3s;
+}
+h3.topbar-selected {
+    color: #707070 !important;
+}
+.backimage{
+    background-image: linear-gradient(to bottom, transparent 95%, #130c24), url(../content/img/FmkW20HWYAAB-sF.jpeg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+div.halfbox {
+    width: 50%; 
+}
+div.flexbox-row {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+div.homeHeadderPadding {
+    padding-top: 29.3vh;
+    padding-bottom: 39.746vh;
+}
+div.namePadding{
+    padding-left: 25%;
+}
+
+@media (max-width: 800px) {
+    div.halfbox {
+        width: 100% !important;
+    }
+    div.flexbox-row {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+    .backimage{
+        background-image: linear-gradient(to bottom, transparent 95%, #130c24), url(../content/img/FmkW20HWYAAB-sF.jpeg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    div.namePadding{
+        padding-left: 10%;
+    }
 }
