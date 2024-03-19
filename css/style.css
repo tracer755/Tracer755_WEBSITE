@@ -92,6 +92,14 @@ div.namePadding{
     padding-left: 25%;
 }
 
+h1.nameDisplay{
+    font-size: 2.4vw;
+}
+h3.underNameDisplay{
+    font-size: 1.4vw;
+    padding-left: 1vw;
+}
+
 @media (max-width: 800px) {
     div.halfbox {
         width: 100% !important;
@@ -109,5 +117,12 @@ div.namePadding{
     }
     div.namePadding{
         padding-left: 10%;
+    }
+    h1.nameDisplay{
+        font-size: 5vw;
+    }
+    h3.underNameDisplay{
+        font-size: 3vw;
+        padding-left: 4.3vw;
     }
 }
