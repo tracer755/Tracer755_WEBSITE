@@ -23,7 +23,7 @@
     font-family: Code-Bold;
 }
 
-/*global bs*/
+/*global boilerplate bs*/
 body{
     background-color: #130c24;
     margin: 0;
@@ -43,6 +43,15 @@ h1,h2,h3,h4,h5,h6{
 br {
     user-select: none;
 }
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+    width: 45%;
+  }
 
 /*magic*/
 div.topbar{
@@ -99,6 +108,23 @@ h3.underNameDisplay{
     font-size: 1.4vw;
     padding-left: 1vw;
 }
+div.skillItem {
+    width: 11.5vw;
+    justify-self: center;
+    padding-left: .2vw;
+    padding-right: .2vw;
+}
+div.skillItem img {
+    border-radius: 50%;
+    max-width: 80%;
+    border: 1.5px solid white;
+}
+div.skillsFlexbox {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    justify-content: center;
+}
 
 @media (max-width: 800px) {
     div.halfbox {
@@ -124,5 +150,24 @@ h3.underNameDisplay{
     h3.underNameDisplay{
         font-size: 3vw;
         padding-left: 4.3vw;
+    }
+
+    div.skillItem img {
+        border-radius: 50%;
+        max-width: 30%;
+    }
+
+    div.skillsFlexbox {
+        display: grid;
+        flex-direction: column;
+        margin: auto;
+        justify-content: center;
+    }
+    div.skillItem {
+        width: 80%;
+        justify-self: center;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        padding-bottom: 6vh;
     }
 }
