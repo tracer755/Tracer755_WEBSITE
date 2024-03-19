@@ -105,6 +105,7 @@ div.namePadding{
         background-image: linear-gradient(to bottom, transparent 95%, #130c24), url(../content/img/FmkW20HWYAAB-sF.jpeg);
         background-size: cover;
         background-repeat: no-repeat;
+        background-position: center;
     }
     div.namePadding{
         padding-left: 10%;
