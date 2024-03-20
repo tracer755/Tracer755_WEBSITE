@@ -5,67 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/projects.css">
+  <link rel="stylesheet" href="css/project-buttons.css">
   <title>Tracer755</title>
   <link rel="icon" type="image/x-icon" href="content/img/favicon.ico">
 
   <style>
-    section.project-Title{
-      padding-left: 10%;
-      padding-bottom: 6vh;
-    }
-    section.project-Title h1{
-      font-size: 1.9vw;
-      padding-left: 20px;
-    }
-
-    div.projectItemContainer{
-      max-width: 22vw;
-      background: rgba(124, 124, 124, 0.2);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-      justify-content: center;
-      border: 5px solid rgba(124, 124, 124, 0.2);
-      border-radius: 10px;
-    }
-    div.projectItemContainer img {
-      max-width: 100%;
-      padding-bottom: 1vh;
-    }
-    div.projectItemContainer hr {
-      width: 75%;
-    }
-    div.projectTitleBoxLeft {
-      width: 65%;
-    }
-    div.projectTitleBoxRight {
-      width: 35%;
-    }
-    .projectStatusChip{
-      margin-left: 7px;
-      margin-top: 5px;
-      padding: 3px;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-top: 3.5px;
-      padding-bottom: 4px;
-      font-size: 16px;
-      border-radius: 30px;
-      border: none;
-      background-color: orange;
-      color: white;
-      margin-right: 10px;
-    }
+    /*Buttons*/
+    
     @media (max-width: 800px) {
-      div.projectItemContainer{
-        max-width: 95%;
-      }
-      section.project-Title{
-        padding-left: 2.5%;
-      }
-      section.project-Title h1{
-        font-size: 5vw;
-        padding-left: 5px;
-      }
+
     }
   </style>
 </head>
@@ -83,10 +32,66 @@
   <section class="project-Title" style="padding-top: 10vw;">
     <h1>Current Projects</h1>
     <hr>
-    <div style="padding-left: .5vw;">
+    <div class="projectFlexbox">
       <div class="projectItemContainer">
         <center>
-          <img src="content/img/Projects/test_thumb.png">
+          <img src="content/img/Projects/VRM_Tool_THUMB.png">
+          <hr>
+          <div class="flexbox-row-noMobile">
+            <div class="projectTitleBoxLeft">
+              <h3 style="float: left; padding-left: 7px; padding-bottom: 5px; text-align: left;">VRM auto setup tool</h3>
+              <h5 style="float: left; padding-left: 14px; padding-bottom: 6px; text-align: left">11/2022 - Present</h5>
+            </div>
+            <div class="projectTitleBoxRight">
+              <div>
+                <h4 class="projectStatusChip" style="background-color: green; text-wrap: nowrap;">Working</h4>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <p style="padding: 3px; padding-bottom: 10px;"> A project requested by <a style="color: cyan" target="_blank" href="https://www.youtube.com/channel/UCaHuQWPtaw8XLRMIOctBQRQ">RitualNeo</a>. This project seeks to make setting up VRM avatars take a minute not hours.</p>
+          <a href="https://github.com/tracer755/VRC_VRM_BlendShape_Avatar_Setup" target="_blank">
+            <div class="githubButton">
+              <img src="content/img/Github Marks/github-mark-white.png">
+              <h2>Visit on github</h2>
+            </div>
+          </a>
+        </center>
+      </div>
+    </div>
+  </section>
+  <section class="project-Title">
+    <h1>Websites</h1>
+    <hr>
+    <div class="projectFlexbox">
+      <div class="projectItemContainer">
+        <center>
+          <img src="content/img/Projects/Tracer755_web_THUMB.png">
+          <hr>
+          <div class="flexbox-row-noMobile">
+            <div class="projectTitleBoxLeft">
+              <h3 style="float: left; padding-left: 7px; padding-bottom: 5px; text-align: left;">Tracer755 Website</h3>
+              <h5 style="float: left; padding-left: 14px; padding-bottom: 6px; text-align: left">03/2024 - Present</h5>
+            </div>
+            <div class="projectTitleBoxRight">
+              <div>
+                <h4 class="projectStatusChip" style="background-color: green; text-wrap: nowrap;">Working</h4>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <p style="padding: 3px; padding-bottom: 10px;">Your on this website right now lol. This is my personal website</p>
+          <a href="https://tracer755.com/" target="_blank">
+            <div class="websiteButton">
+              <img src="content/img/open_icon.png">
+              <h2>Visit this site</h2>
+            </div>
+          </a>
+        </center>
+      </div>
+      <div class="projectItemContainer">
+        <center>
+          <img src="content/img/Projects/BulletDrop_web_THUMB.png">
           <hr>
           <div class="flexbox-row-noMobile">
             <div class="projectTitleBoxLeft">
@@ -95,22 +100,24 @@
             </div>
             <div class="projectTitleBoxRight">
               <div>
-                <h4 class="projectStatusChip" style="background-color: black; text-wrap: nowrap;">On Pause</h4>
+                <h4 class="projectStatusChip" style="background-color: grey; text-wrap: nowrap;">Paused</h4>
               </div>
             </div>
           </div>
           <hr>
-          <p style="padding: 3px; padding-bottom: 10px;"></p>
+          <p style="padding: 3px; padding-bottom: 10px;">The website for bulletdrop studios. The inde game dev studio I run</p>
+          <a href="https://bulletdropstudios.com/" target="_blank">
+            <div class="websiteButton">
+              <img src="content/img/open_icon.png">
+              <h2>Visit this site</h2>
+            </div>
+          </a>
         </center>
       </div>
     </div>
   </section>
   <section class="project-Title">
-    <h1 style="padding-left: 20px;">Websites</h1>
-    <hr>
-  </section>
-  <section class="project-Title">
-    <h1 style="padding-left: 20px;">Old Projects</h1>
+    <h1>Old Projects</h1>
     <hr>
   </section>
 </body>

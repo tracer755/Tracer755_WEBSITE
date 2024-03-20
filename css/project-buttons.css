@@ -1,0 +1,74 @@
+div.githubButton {
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  border-radius: 6px;
+
+  padding: 3px;
+  margin: 6px;
+
+  transition: .6s;
+}
+div.githubButton:hover {
+  background-color: #141414;
+  box-shadow: 2.5px 2.5px 1.25px black;
+  transition: .6s;
+}
+div.githubButton img {
+  border-radius: 50%;
+  float: left;
+  margin-left: .2vw;
+  height: 48px;
+
+  padding-top: .2vh;
+  padding-bottom: .2vh;
+}
+div.githubButton h2 {
+  text-align: center; 
+  vertical-align: center; 
+  line-height: 50px;
+  padding-left: 4vw;
+}
+
+
+div.websiteButton {
+  display: flex;
+  flex-direction: row;
+  background-color: #5816b5;
+  border-radius: 6px;
+
+  padding: 3px;
+  margin: 6px;
+
+  transition: .6s;
+}
+div.websiteButton:hover {
+  background-color: #5015a3;
+  box-shadow: 2.5px 2.5px 1.25px #14032b;
+  transition: .6s;
+}
+div.websiteButton img {
+  border-radius: 50%;
+  float: left;
+  margin-left: .2vw;
+  height: 48px;
+
+  padding-top: .2vh;
+  padding-bottom: .2vh;
+}
+div.websiteButton h2 {
+  text-align: center; 
+  vertical-align: center; 
+  line-height: 50px;
+  padding-left: 4vw;
+}
+
+
+@media (max-width: 800px) {
+  div.githubButton h2 {
+    padding-left: 14vw;
+  }
+  div.websiteButton h2 {
+    padding-left: 14vw;
+  }
+}
