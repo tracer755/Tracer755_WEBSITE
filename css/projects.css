@@ -56,11 +56,11 @@ div.projectFlexbox {
 
 @media (max-width: 800px) {
   div.projectItemContainer{
-    max-width: 95%;
+    max-width: 97.5%;
     min-width: 300px;
   }
   section.project-Title{
-    padding-left: 0%;
+    padding-left: 0.5%;
   }
   section.project-Title h1{
     font-size: 5.3vw;
