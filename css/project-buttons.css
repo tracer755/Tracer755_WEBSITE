@@ -68,9 +68,9 @@ div.websiteButton h2 {
 
 @media (max-width: 800px) {
   div.githubButton h2 {
-    padding-left: 14vw;
+    padding-left: 8vw;
   }
   div.websiteButton h2 {
-    padding-left: 14vw;
+    padding-left: 8vw;
   }
 }
