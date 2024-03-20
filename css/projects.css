@@ -40,7 +40,7 @@ div.projectTitleBoxRight {
   padding-right: 10px;
   padding-top: 3.5px;
   padding-bottom: 4px;
-  font-size: 16px;
+  font-size: min(5vw, 16px);
   border-radius: 30px;
   border: none;
   background-color: orange;
@@ -57,9 +57,10 @@ div.projectFlexbox {
 @media (max-width: 800px) {
   div.projectItemContainer{
     max-width: 95%;
+    min-width: 300px;
   }
   section.project-Title{
-    padding-left: 1.5%;
+    padding-left: 0%;
   }
   section.project-Title h1{
     font-size: 5.3vw;
@@ -68,4 +69,8 @@ div.projectFlexbox {
   div.projectFlexbox {
     flex-direction: column;
   }
+  .projectStatusChip{
+    font-size: min(5vw, 14px);
+  }
+  
 }
