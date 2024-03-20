@@ -54,7 +54,7 @@ hr {
   }
 
 /*magic*/
-div.topbar{
+nav.topbar{
     justify-content: center;
     display: inline-flex;
     flex-direction: row;
@@ -67,13 +67,13 @@ div.topbar{
     border-top: 0;
     padding: .5vw;
 }
-div.topbar h3 {
+nav.topbar h3 {
     color: white;
     padding-left: 1.2vw;
     padding-right: 1.2vw;
     transition: .3s;
 }
-div.topbar h3:hover {
+nav.topbar h3:hover {
     color: #c7c7c7;
     transition: .3s;
 }
@@ -84,16 +84,17 @@ h3.topbar-selected {
     background-image: linear-gradient(to bottom, transparent 95%, #130c24), url(../content/img/FmkW20HWYAAB-sF.jpeg);
     background-size: 100%;
     background-repeat: no-repeat;
+    background-position: center;
 }
 div.halfbox {
     width: 50%; 
 }
-div.flexbox-row {
+.flexbox-row {
     display: flex;
     flex-direction: row;
     margin: auto;
 }
-div.homeHeadderPadding {
+.homeHeadderPadding {
     padding-top: 29.3vh;
     padding-bottom: 39.746vh;
 }
@@ -105,7 +106,7 @@ h1.nameDisplay{
     font-size: 2.4vw;
 }
 h3.underNameDisplay{
-    font-size: 1.4vw;
+    font-size: 1.37vw;
     padding-left: 1vw;
 }
 div.skillItem {
@@ -118,6 +119,12 @@ div.skillItem img {
     border-radius: 50%;
     max-width: 80%;
     border: 1.5px solid white;
+    transform: scale(1);
+    transition: .6s;
+}
+div.skillItem img:hover {
+    transform: scale(1.05);
+    transition: .6s;
 }
 div.skillsFlexbox {
     display: flex;
@@ -130,16 +137,11 @@ div.skillsFlexbox {
     div.halfbox {
         width: 100% !important;
     }
-    div.flexbox-row {
-        display: flex;
+    .flexbox-row {
         flex-direction: column;
-        margin: auto;
     }
     .backimage{
-        background-image: linear-gradient(to bottom, transparent 95%, #130c24), url(../content/img/FmkW20HWYAAB-sF.jpeg);
         background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
     }
     div.namePadding{
         padding-left: 6%;
