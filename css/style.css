@@ -34,7 +34,7 @@ a {
 img{
     max-width: 100%;
 }
-h1,h2,h3,h4,h5,h6{
+h1,h2,h3,h4,h5,h6,p{
     font-family: Outage;
     color: white;
     padding: 0;
@@ -51,7 +51,7 @@ hr {
     margin: 1em 0;
     padding: 0;
     width: 45%;
-  }
+}
 
 /*magic*/
 nav.topbar{
@@ -94,6 +94,11 @@ div.halfbox {
     flex-direction: row;
     margin: auto;
 }
+.flexbox-row-noMobile {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
 .homeHeadderPadding {
     padding-top: 29.3vh;
     padding-bottom: 39.746vh;
@@ -131,6 +136,15 @@ div.skillsFlexbox {
     flex-direction: row;
     margin: auto;
     justify-content: center;
+}
+hr.skillsbar {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+    width: 65%;
 }
 
 @media (max-width: 800px) {

@@ -9,9 +9,61 @@
   <link rel="icon" type="image/x-icon" href="content/img/favicon.ico">
 
   <style>
-    div.project-Title{
+    section.project-Title{
       padding-left: 10%;
       padding-bottom: 6vh;
+    }
+    section.project-Title h1{
+      font-size: 1.9vw;
+    }
+
+    div.projectItemContainer{
+      max-width: 22vw;
+      background: rgba(124, 124, 124, 0.2);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      justify-content: center;
+      border: 5px solid rgba(124, 124, 124, 0.2);
+      border-radius: 10px;
+    }
+    div.projectItemContainer img {
+      max-width: 100%;
+      padding-bottom: 1vh;
+    }
+    div.projectItemContainer hr {
+      width: 75%;
+    }
+    div.projectTitleBoxLeft {
+      width: 65%;
+    }
+    div.projectTitleBoxRight {
+      width: 35%;
+    }
+    .projectStatusChip{
+      margin-left: 7px;
+      margin-top: 5px;
+      padding: 3px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 3.5px;
+      padding-bottom: 4px;
+      font-size: 16px;
+      border-radius: 30px;
+      border: none;
+      background-color: orange;
+      color: white;
+      margin-right: 10px;
+    }
+    @media (max-width: 800px) {
+      div.projectItemContainer{
+        max-width: 80%;
+        background: rgba(124, 124, 124, 0.2);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        justify-content: center;
+        border: 5px solid rgba(124, 124, 124, 0.2);
+        border-radius: 10px;
+      }
     }
   </style>
 </head>
@@ -26,13 +78,38 @@
     </center>
   </div>
 
-  <div class="project-Title" style="padding-top: 10vw;">
+  <section class="project-Title" style="padding-top: 10vw;">
     <h1 style="padding-left: 20px;">Current Projects</h1>
     <hr>
-  </div>
-  <div class="project-Title">
+    <div style="padding-left: .5vw;">
+      <div class="projectItemContainer">
+        <center>
+          <img src="content/img/Projects/test_thumb.png">
+          <hr>
+          <div class="flexbox-row-noMobile">
+            <div class="projectTitleBoxLeft">
+              <h3 style="float: left; padding-left: 7px; padding-bottom: 5px; text-align: left;">VRM auto setup tool</h3>
+              <h5 style="float: left; padding-left: 14px; padding-bottom: 6px; text-align: left">05/2022 - Present</h5>
+            </div>
+            <div class="projectTitleBoxRight">
+              <div>
+                <h4 class="projectStatusChip" style="background-color: black; text-wrap: nowrap;">On Pause</h4>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <p style="padding: 3px; padding-bottom: 10px;"></p>
+        </center>
+      </div>
+    </div>
+  </section>
+  <section class="project-Title">
+    <h1 style="padding-left: 20px;">Websites</h1>
+    <hr>
+  </section>
+  <section class="project-Title">
     <h1 style="padding-left: 20px;">Old Projects</h1>
     <hr>
-  </div>
+  </section>
 </body>
 </html>
