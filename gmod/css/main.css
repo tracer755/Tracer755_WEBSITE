@@ -41,6 +41,18 @@ br
   padding-left: 18%; 
   padding-right: 18%;
 }
+.getFileButtonWidth{
+  max-width: 20%;
+}
+.fileUsageWidth{
+  max-width: 50%;
+}
+.previewImageWidth{
+  width: 40%;
+}
+.previewLinkWidth{
+  width: 38% !important;
+}
 
 @media (max-width: 800px) {
   .card-container {
@@ -53,5 +65,17 @@ br
   .recentAudiosBox{
     padding-left: 3%; 
     padding-right: 3%;
+  }
+  .getFileButtonWidth{
+    max-width: 65%;
+  }
+  .fileUsageWidth{
+    max-width: 80%;
+  }
+  .previewImageWidth{
+    width: 80%;
+  }
+  .previewLinkWidth{
+    width: 78% !important;
   }
 }

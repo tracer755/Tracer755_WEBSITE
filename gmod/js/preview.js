@@ -8,10 +8,10 @@ function loadPreview(){
           const box = document.getElementById("DataBox");
           box.innerHTML += `
           <h3 style="padding-bottom: 10px; max-width: 80%;">` + response2.data.name + `</h3>
-          <img width="40%" src = "` + apiBase + `/thumbnail/` + response2.data.id + `.jpg">
+          <img class="previewImageWidth" src = "` + apiBase + `/thumbnail/` + response2.data.id + `.jpg">
           <br>
           <br>
-          <div class="input-group mb-3" style="width: 38%">
+          <div class="previewLinkWidth input-group mb-3">
             <input type="text" class="form-control" placeholder="` + apiBase + `/music/` + response2.data.id + `.webm" aria-label="Link" aria-describedby="button-addon2" readonly="">
             <button class="btn btn-primary" type="button" id="button-addon2" onclick="copyMusicLink()">Copy</button>
           </div>
