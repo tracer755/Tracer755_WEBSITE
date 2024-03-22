@@ -42,7 +42,7 @@ function LoadHomePage(){
           <br>
           <div class="alert-dismissible alert-primary" style="display: flex; align-items: center; padding: 6px;">
             <img width="75vw" src="` + apiBase + `/thumbnail/` + obj.id + `.jpg" style="margin-right: 10px;">
-            <div style="max-width: 70%;">
+            <div class="recentAudiosWidthText">
               <h4 style="margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">` + obj.name + `</h4>
               <h5>` + secondsToHMS(obj.duration) + `</h5>
             </div>
