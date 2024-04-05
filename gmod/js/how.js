@@ -7,7 +7,7 @@ function showStorageUsage(){
       let gb = mb / 1024;
 
       if(gb > 1){
-        document.getElementById("storageText").innerHTML = Math.round(gb * 100) / 100 + "MB / 10GB"
+        document.getElementById("storageText").innerHTML = Math.round(gb * 100) / 100 + "GB / 10GB"
       }
       else{
         document.getElementById("storageText").innerHTML = Math.round(mb * 100) / 100 + "MB / 10GB"

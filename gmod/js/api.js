@@ -67,6 +67,22 @@ function LoadHomePage(){
       </div>
       `;
     });
+
+
+  axios.get(apiBase + "/api/data/sentData")
+    .then(response => {
+      let mb = response.data * 0.000001;
+      let gb = mb / 1024;
+      // Served 10.7MB of music to players
+      if(gb > 1){
+        document.getElementById("sentDataText").innerHTML = "Served " + Math.round(gb * 100) / 100 + "GB of music to players"
+      }
+      else{
+        document.getElementById("sentDataText").innerHTML = "Served " + Math.round(mb * 100) / 100 + "MB of music to players"
+      }
+    })
+    .catch(function (error) {
+    });
 }
 
 function secondsToHMS(seconds) {
