@@ -46,7 +46,7 @@ app.disable('x-powered-by');
 app.use(express.static('Website'));
 
 app.get("/test", (req,res) => {
-  res.send("test");
+  res.send("./Website/index.html");
 })
 
 // Handle 404 errors
