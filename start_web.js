@@ -2,7 +2,7 @@ const express = require("express");
 const helmet = require('helmet');
 const winston = require('winston');
 const { combine, timestamp, json, printf } = winston.format;
-
+const http = require('http');
 
 const app = express();
 const port = 8080;
@@ -52,3 +52,5 @@ app.use((err, req, res, next) => {
 app.use(express.static('Website'));
 
 app.listen(port)
+
+http.createServer(app).listen(80);
