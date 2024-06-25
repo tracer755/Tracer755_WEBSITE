@@ -4,6 +4,10 @@ const helmet = require('helmet');
 const app = express();
 const port = 3000;
 
+app.use((req, res, next) => {
+  console.log(req);
+  next();
+});
 app.use(helmet());
 app.disable('x-powered-by');
 app.use(express.static('Website'));
