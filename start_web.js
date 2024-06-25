@@ -43,7 +43,7 @@ app.use(helmet());
 app.disable('x-powered-by');
 
 // Serve static files from the 'Website' directory
-app.use(express.static('Website'));
+app.use(express.static("/1", 'Website'));
 
 app.get("/test", (req,res) => {
   res.send("./Website/index.html");
