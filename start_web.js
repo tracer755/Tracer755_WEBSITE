@@ -45,6 +45,10 @@ app.disable('x-powered-by');
 // Serve static files from the 'Website' directory
 app.use(express.static('Website'));
 
+api.get("/test", (req,res) => {
+  res.send("test");
+})
+
 // Handle 404 errors
 app.use((req, res, next) => {
   res.status(404).send("404 Sorry can't find that!");
