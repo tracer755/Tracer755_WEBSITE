@@ -5,7 +5,7 @@ const { combine, timestamp, json, printf } = winston.format;
 
 
 const app = express();
-const port = 3000;
+const port = 8080;
 
 const logger = winston.createLogger({
   level: 'info',
