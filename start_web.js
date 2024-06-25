@@ -3,8 +3,10 @@ const helmet = require('helmet');
 const winston = require('winston');
 const { combine, timestamp, json, printf } = winston.format;
 const http = require('http');
+var cors = require("cors");
 
 const app = express();
+app.use(cors());
 const port = 8080;
 
 const logger = winston.createLogger({
@@ -40,9 +42,9 @@ app.use((req, res, next) => {
 app.use(helmet());
 app.disable('x-powered-by');
 
-/*app.use((req, res, next) => {
+app.use((req, res, next) => {
   res.status(404).send("404 Sorry can't find that!")
-})*/
+})
 
 app.use((err, req, res, next) => {
   console.error(err.stack)
