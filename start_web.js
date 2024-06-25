@@ -45,7 +45,7 @@ app.disable('x-powered-by');
 // Serve static files from the 'Website' directory
 app.use(express.static('Website'));
 
-api.get("/test", (req,res) => {
+app.get("/test", (req,res) => {
   res.send("test");
 })
 
