@@ -2,7 +2,7 @@ const express = require("express");
 const helmet = require('helmet');
 
 const app = express();
-const port = 8080;
+const port = 80;
 
 app.use(helmet());
 app.disable('x-powered-by');
