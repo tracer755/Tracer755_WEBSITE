@@ -66,7 +66,7 @@ app.use((req, res, next) => {
   }
 
   if(filepath != "" && filepath.includes("/Website/")){
-    res.sendFile(filepath);
+    res.status(200).sendFile(filepath);
   }
   else{
     next();
