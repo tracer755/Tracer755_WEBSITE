@@ -56,13 +56,15 @@ app.use((req, res, next) => {
   const url = decodeURIComponent(req.url.replace(/^(\.\.[\/\\])+/, ''));
   //try to find the file, if not found continue if it is found serve it. Thank fuck sherlock
   let filepath = "";
+
   if(fs.existsSync(__dirname + "/Website" + url)){
     filepath = __dirname + "/Website" + url;
   }
-  else{
-    if(fs.existsSync(__dirname + "/Website" + url + ".html")){
-      filepath = __dirname + "/Website" + url + ".html";
-    }
+  else if(fs.existsSync(__dirname + "/Website" + url + ".html")){
+    filepath = __dirname + "/Website" + url + ".html";
+  }
+  else if(fs.existsSync(__dirname + "/Website" + url + "/index.html")){
+    filepath = __dirname + "/Website" + url + "/index.html";
   }
 
   if(filepath != "" && filepath.includes("/Website/")){
@@ -85,6 +87,6 @@ app.use((err, req, res, next) => {
 
 
 
-app.listen(port)
+//app.listen(port)
 
 http.createServer(app).listen(80);
