@@ -46,33 +46,23 @@ app.use((req, res, next) => {
 //app.use(helmet());
 app.disable('x-powered-by');
 
-async function checkFileInFolder(folder, filename) {
-  const filePath = path.join(folder, filename);
-  try {
-    await fs.access(filePath);
-    console.log('File exists');
-    return true;
-  } catch (error) {
-    console.log('File does not exist' + filename);
-    return false;
-  }
-}
 
 app.use((req, res, next) => {
   console.log(req.url);
+  url = decodeURIComponent(req.url);
   //try to find the file, if not found continue if it is found serve it. Thank fuck sherlock
   let filepath = "";
-  if(fs.existsSync(__dirname + "/Website" + req.url)){
-    filepath = __dirname + "/Website" + req.url;
+  if(fs.existsSync(__dirname + "/Website" + url)){
+    filepath = __dirname + "/Website" + url;
   }
   else{
-    if(fs.existsSync(__dirname + "/Website" + req.url + ".html")){
-      filepath = __dirname + "/Website" + req.url + ".html";
+    if(fs.existsSync(__dirname + "/Website" + url + ".html")){
+      filepath = __dirname + "/Website" + url + ".html";
     }
   }
 
   if(filepath != ""){
-    if(checkFileInFolder("./Website", filepath)){
+    if(filepath.includes("/Website/")){
       res.sendFile(filepath);
     }
   }
