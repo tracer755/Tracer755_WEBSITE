@@ -43,13 +43,17 @@ app.use((req, res, next) => {
   next();
 });
 
-//app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  }),
+);
 app.disable('x-powered-by');
-
+app.use(require('sanitize').middleware);
 
 app.use((req, res, next) => {
-  console.log(req.url);
-  url = decodeURIComponent(req.url);
+  //console.log(req.url);
+  const url = decodeURIComponent(req.url.replace(/^(\.\.[\/\\])+/, ''));
   //try to find the file, if not found continue if it is found serve it. Thank fuck sherlock
   let filepath = "";
   if(fs.existsSync(__dirname + "/Website" + url)){
@@ -61,10 +65,8 @@ app.use((req, res, next) => {
     }
   }
 
-  if(filepath != ""){
-    if(filepath.includes("/Website/")){
-      res.sendFile(filepath);
-    }
+  if(filepath != "" && filepath.includes("/Website/")){
+    res.sendFile(filepath);
   }
   else{
     next();
