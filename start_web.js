@@ -12,8 +12,8 @@ const port = 8080;
 const logging = false;
 
 const httpsServer = https.createServer({
-  key: fs.readFileSync('./privkey.pem'),
-  cert: fs.readFileSync('./cert.pem'),
+  key: fs.readFileSync(__dirname + '/privkey.pem'),
+  cert: fs.readFileSync(__dirname + './cert.pem'),
 }, app);
 
 const logger = winston.createLogger({
