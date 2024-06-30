@@ -11,6 +11,10 @@ const app = express();
 const port = 8080;
 const logging = false;
 
+const httpsServer = https.createServer({
+  key: fs.readFileSync('/etc/letsencrypt/live/tracer755.com/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/tracer755.com/fullchain.pem'),
+}, app);
 
 const logger = winston.createLogger({
   level: 'info',
@@ -90,15 +94,6 @@ app.use((err, req, res, next) => {
 
 //app.listen(port)
 
-const httpsServer = https.createServer({
-  key: fs.readFileSync('/etc/letsencrypt/live/tracer755.com/privkey.pem'),
-  cert: fs.readFileSync('/etc/letsencrypt/live/tracer755.com/fullchain.pem'),
-}, app);
-
-httpsServer.listen(443, () => {
-    console.log('HTTPS Server running on port 443');
-}).on('error', (err) => {
-    console.error('Failed to start HTTPS server:', err);
-});
+httpsServer.listen(443, () => {console.log('HTTPS Server running on port 443');});
 
 http.createServer(app).listen(80);
