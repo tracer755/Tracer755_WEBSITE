@@ -3,6 +3,7 @@ const helmet = require('helmet');
 const winston = require('winston');
 const { combine, timestamp, json, printf } = winston.format;
 const http = require('http');
+const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
@@ -88,5 +89,14 @@ app.use((err, req, res, next) => {
 
 
 //app.listen(port)
+
+const httpsServer = https.createServer({
+  key: fs.readFileSync('/etc/letsencrypt/live/tracer755.com/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/tracer755.com/fullchain.pem'),
+}, app);
+
+httpsServer.listen(443, () => {
+    console.log('HTTPS Server running on port 443');
+});
 
 http.createServer(app).listen(80);
