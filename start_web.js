@@ -13,7 +13,7 @@ const logging = false;
 
 const httpsServer = https.createServer({
   key: fs.readFileSync(__dirname + '/privkey.pem'),
-  cert: fs.readFileSync(__dirname + './cert.pem'),
+  cert: fs.readFileSync(__dirname + '/cert.pem'),
 }, app);
 
 const logger = winston.createLogger({
