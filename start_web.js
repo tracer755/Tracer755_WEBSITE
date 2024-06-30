@@ -12,8 +12,8 @@ const port = 8080;
 const logging = false;
 
 const httpsServer = https.createServer({
-  key: fs.readFileSync('/etc/letsencrypt/live/tracer755.com/privkey.pem'),
-  cert: fs.readFileSync('/etc/letsencrypt/live/tracer755.com/fullchain.pem'),
+  key: fs.readFileSync('./privkey.pem'),
+  cert: fs.readFileSync('./cert.pem'),
 }, app);
 
 const logger = winston.createLogger({
