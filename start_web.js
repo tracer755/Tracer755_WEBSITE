@@ -97,6 +97,8 @@ const httpsServer = https.createServer({
 
 httpsServer.listen(443, () => {
     console.log('HTTPS Server running on port 443');
+}).on('error', (err) => {
+    console.error('Failed to start HTTPS server:', err);
 });
 
 http.createServer(app).listen(80);
