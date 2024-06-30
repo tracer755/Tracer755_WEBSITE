@@ -11,10 +11,10 @@ const app = express();
 const port = 8080;
 const logging = false;
 
-const httpsServer = https.createServer({
+/*const httpsServer = https.createServer({
   key: fs.readFileSync(__dirname + '/privkey.pem'),
   cert: fs.readFileSync(__dirname + '/cert.pem'),
-}, app);
+}, app);*/
 
 const logger = winston.createLogger({
   level: 'info',
@@ -94,6 +94,6 @@ app.use((err, req, res, next) => {
 
 //app.listen(port)
 
-httpsServer.listen(443, () => {console.log('HTTPS Server running on port 443');});
+//httpsServer.listen(443, () => {console.log('HTTPS Server running on port 443');});
 
 http.createServer(app).listen(80);
