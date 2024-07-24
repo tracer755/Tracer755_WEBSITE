@@ -36,18 +36,6 @@ const logger = winston.createLogger({
   ],
 });
 
-app.use((req, res, next) => {
-  if(logging){
-    if(!req.url.endsWith(".jpg") && !req.url.endsWith(".png") && !req.url.endsWith(".jpeg") && !req.url.endsWith(".ico")){
-      if(req.get('User-Agent') != "Statping-ng"){
-        var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress 
-        logger.info(`Received request for: ${req.url} | Client ${req.get('User-Agent')} | IP: ${ip}`);
-      }
-    }
-  }
-  next();
-});
-
 app.use(
   helmet({
     contentSecurityPolicy: false,
@@ -57,25 +45,49 @@ app.disable('x-powered-by');
 app.use(require('sanitize').middleware);
 
 app.use((req, res, next) => {
-  //console.log(req.url);
-  const url = decodeURIComponent(req.url.replace(/^(\.\.[\/\\])+/, ''));
-  //try to find the file, if not found continue if it is found serve it. Thank fuck sherlock
-  let filepath = "";
+  try{
+    if(logging){
+      if(!req.url.endsWith(".jpg") && !req.url.endsWith(".png") && !req.url.endsWith(".jpeg") && !req.url.endsWith(".ico")){
+        if(req.get('User-Agent') != "Statping-ng"){
+          var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress 
+          logger.info(`Received request for: ${req.url} | Client ${req.get('User-Agent')} | IP: ${ip}`);
+        }
+      }
+    }
+    next();
+  }
+  catch{
+    logger.error("Logging error");
+    next();
+  }
+});
 
-  if(fs.existsSync(__dirname + "/Website" + url)){
-    filepath = __dirname + "/Website" + url;
-  }
-  else if(fs.existsSync(__dirname + "/Website" + url + ".html")){
-    filepath = __dirname + "/Website" + url + ".html";
-  }
-  else if(fs.existsSync(__dirname + "/Website" + url + "/index.html")){
-    filepath = __dirname + "/Website" + url + "/index.html";
-  }
+app.use((req, res, next) => {
+  try{
+    //console.log(req.url);
+    const url = decodeURIComponent(req.url.replace(/^(\.\.[\/\\])+/, ''));
+    //try to find the file, if not found continue if it is found serve it. Thank fuck sherlock
+    let filepath = "";
 
-  if(filepath != "" && filepath.includes("/Website/")){
-    res.status(200).sendFile(filepath);
+    if(fs.existsSync(__dirname + "/Website" + url)){
+      filepath = __dirname + "/Website" + url;
+    }
+    else if(fs.existsSync(__dirname + "/Website" + url + ".html")){
+      filepath = __dirname + "/Website" + url + ".html";
+    }
+    else if(fs.existsSync(__dirname + "/Website" + url + "/index.html")){
+      filepath = __dirname + "/Website" + url + "/index.html";
+    }
+
+    if(filepath != "" && filepath.includes("/Website/")){
+      res.status(200).sendFile(filepath);
+    }
+    else{
+      next();
+    }
   }
-  else{
+  catch{
+    logger.error("File serve error");
     next();
   }
 });
@@ -89,8 +101,6 @@ app.use((err, req, res, next) => {
   console.error(err.stack)
   res.status(500).send('500 Something broke! Sorry :(')
 })
-
-
 
 //app.listen(port)
 
