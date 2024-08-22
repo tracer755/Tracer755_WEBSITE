@@ -65,7 +65,7 @@ app.use((req, res, next) => {
 app.use((req, res, next) => {
   try{
     //console.log(req.url);
-    const url = decodeURIComponent(req.url.replace(/^(\.\.[\/\\])+/, ''));
+    const url = decodeURIComponent(req.url.replace(/^(\.\.[\/\\])+/, '')).split("?")[0];
     //try to find the file, if not found continue if it is found serve it. Thank fuck sherlock
     let filepath = "";
 
@@ -83,8 +83,8 @@ app.use((req, res, next) => {
       res.status(200).sendFile(filepath);
     }
     else{
-      //next();
-      res.status(200).sendFile(filepath);
+      next();
+      //res.status(200).sendFile(filepath);
     }
   }
   catch{
