@@ -83,7 +83,8 @@ app.use((req, res, next) => {
       res.status(200).sendFile(filepath);
     }
     else{
-      next();
+      //next();
+      res.status(200).sendFile(filepath);
     }
   }
   catch{
