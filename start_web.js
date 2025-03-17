@@ -107,4 +107,4 @@ app.use((err, req, res, next) => {
 
 //httpsServer.listen(443, () => {console.log('HTTPS Server running on port 443');});
 
-http.createServer(app).listen(80);
+http.createServer(app).listen(80, () => {console.log('HTTP Server running on port 80');});
