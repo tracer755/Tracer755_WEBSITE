@@ -2,6 +2,7 @@ const express = require("express");
 const helmet = require('helmet');
 const winston = require('winston');
 const { combine, timestamp, json, printf } = winston.format;
+const date_rotate_file = require('winston-daily-rotate-file');
 const http = require('http');
 const https = require('https');
 const fs = require('fs');
@@ -9,7 +10,7 @@ const path = require('path');
 
 const app = express();
 const port = 8080;
-const logging = false;
+const logging = true;
 
 /*const httpsServer = https.createServer({
   key: fs.readFileSync(__dirname + '/privkey.pem'),
@@ -28,9 +29,11 @@ const logger = winston.createLogger({
         winston.format.cli()
       ),
     }),
-    new winston.transports.File({
-      filename: 'logs/log.txt',
+    new winston.transports.DailyRotateFile({
+      filename: 'logs/%DATE%_log.txt',
       datePattern: 'YYYY-MM-DD',
+      zippedArchive: false,
+      maxFiles: '365d',
       format: json(), // Use only JSON format for file logging
     }),
   ],
@@ -95,6 +98,8 @@ app.use((req, res, next) => {
 
 
 app.use((req, res, next) => {
+  var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress 
+  logger.warn(`404 Received invalid request for: ${req.url} | Client ${req.get('User-Agent')} | IP: ${ip}`);
   res.status(404).send("404 Sorry can't find that!")
 })
 
