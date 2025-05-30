@@ -50,7 +50,7 @@ app.use(require('sanitize').middleware);
 app.use((req, res, next) => {
   try{
     if(logging){
-      if(!req.url.endsWith(".jpg") && !req.url.endsWith(".png") && !req.url.endsWith(".jpeg") && !req.url.endsWith(".ico")){
+      if(!req.url.endsWith(".jpg") && !req.url.endsWith(".png") && !req.url.endsWith(".jpeg") && !req.url.endsWith(".ico") && !req.url.endsWith("mp4")){
         if(req.get('User-Agent') != "Statping-ng"){
           var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress 
           logger.info(`Received request for: ${req.url} | Client ${req.get('User-Agent')} | IP: ${ip}`);
