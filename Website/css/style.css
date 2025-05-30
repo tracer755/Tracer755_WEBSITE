@@ -126,7 +126,7 @@ div.skillItem {
 div.skillItem img {
     border-radius: 50%;
     max-width: 80%;
-    border: 1.5px solid white;
+    border: 1.75px solid white;
     transform: scale(1);
     transition: .6s;
 }
